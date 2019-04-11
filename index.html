@@ -27,131 +27,179 @@
 <body>
 
 
-<div class="container">
 
-    <form class="row">
-        <div class="col-4"><label for="userName" class="control-label">Name (Full name)</label></div>
-        <div class="col-12 col-md-5 input-row">
-            <div class="input-group-text-2">
-                <svg class="icon-people">
-                    <use xlink:href="#people"></use>
-                </svg>
-            </div>
-            <input type="text" class="form-control-name" id="userName" name="name"
-                   minlength="2" placeholder="Name (Full name)"  required><br/>
-        </div>
-            <p class="error-name error">min length 5 symbols</p>
-    </form>
+<div class="container-fluid">
 
-    <div class="row">
-        <div class="col-4"><label class="control-label-foto">Upload photo</label></div>
-        <div class="col-12 col-md-5 form-group">
-            <input type="file" class="form-control-file" id="userPhoto" name="file" onchange="readURL(this);">
-            <img id="blah" src="http://placehold.it/50" alt="your image"/>
-        </div>
+    <div class="form-group">
+        <label class="label-wrap col-12">
+            <span class="col-md-3">Name (Full name)</span>
+            <span class="col-md-4 col-12">
+                <svg><use xlink:href="#people"></use></svg>
+                <input
+                    class="form-control-name"
+                    type="text"
+                    id="userName"
+                    name="name"
+                    minlength="2"
+                    placeholder="Name (Full name)"
+                    required
+                    autocomplete="off"
+                >
+                 <p class="error-name error">min length 5 symbols</p>
+            </span>
+        </label>
     </div>
 
-    <div class="row">
-        <div class="col-4"><label for="userBirth" class="control-label">Date Of Birth</label></div>
-        <div class="col-12 col-md-5  input-row">
-            <div class="input-group-text-2">
-                <svg class="icon-cake">
-                    <use xlink:href="#cake"></use>
-                </svg>
-            </div>
-            <input type="text" class="form-control-birth"
-                    id="userBirth" placeholder="Date Of Birth">
-        </div>
+    <div class="form-group">
+        <label class="label-wrap col-12">
+            <span class="col-md-3">Upload photo</span>
+            <span class="col-md-4 col-12">
+               <label class="btn-foto" type="file">
+                  <a href="#">
+                       <input
+                               type="file"
+                               class="form-control-file"
+                               id="userPhoto"
+                               name="file"
+                               onchange="readURL(this);">
+                   Upload photo
+                  </a>
+               </label>
+                <img id="blah" src="https://via.placeholder.com/50/e9ecef/0000FF/?text="/>
+            </span>
+        </label>
     </div>
 
-    <div class="row">
-        <div class="col-4"><label for="radio1" class="control-label">Gender</label></div>
-        <form class="col-12 col-md-5 line-gender">
-            <div class="form-check-inline">
-                <label class="form-check-label" for="radio1">
-                    <input type="radio" class="form-check-input" id="radio1" name="optradio" value="option1" checked>Male
+    <div class="form-group">
+        <label class="label-wrap col-12">
+            <span class="col-md-3">Date Of Birth</span>
+            <span class="col-md-4 col-12">
+                <svg><use xlink:href="#cake"></use></svg>
+                <input
+                        class="form-control-birth"
+                        type="text"
+                        id="userBirth"
+                        placeholder="Date Of Birth"
+                >
+            </span>
+        </label>
+    </div>
+
+    <div class="form-group">
+        <label class="label-wrap col-12">
+            <span class="col-md-3">Gender</span>
+            <span class="col-md-4 col-12">
+                  <label class="form-check-label" for="radio1">
+                    <input
+                        type="radio"
+                        class="form-check-input"
+                        id="radio1"
+                        name="optradio"
+                        value="option1"
+                        checked
+                    >Male
                 </label>
-            </div>
-            <div class="form-check-inline">
-                <label class="form-check-label" for="radio2">
-                    <input type="radio" class="form-check-input" id="radio2" name="optradio" value="option2">Female
+                 <label class="form-check-label" for="radio2">
+                    <input
+                        type="radio"
+                        class="form-check-input"
+                        id="radio2"
+                        name="optradio"
+                        value="option2"
+                    >Female
                 </label>
-            </div>
-        </form>
+            </span>
+        </label>
     </div>
 
-    <div class="row">
-        <div class="col-4"><label for="userPhone" class="control-label">Phone number
-        </label></div>
-        <div class="col-12 col-md-5  input-row input-row-phone">
-            <div class="input-group-text-2">
-                <svg class="icon-phone-call">
-                    <use xlink:href="#phone-call"></use>
-                </svg>
-            </div>
-            <input type="text" class="form-control-phone" id="userPhone" placeholder="+380"
-                   oninput="this.value=this.value.replace(/[^0-9\+]/g,'');" maxlength="13">
-        </div>
-        <p class="error-phone">Start from +380</p>
+
+    <div class="form-group">
+        <label class="label-wrap col-12">
+            <span class="col-md-3">Phone number</span>
+            <span class="col-md-4 col-12">
+                <svg><use xlink:href="#phone-call"></use></svg>
+                <input
+                    class="form-control-phone"
+                    type="text"
+                    id="userPhone"
+                    placeholder="+380"
+                    oninput="this.value=this.value.replace(/[^0-9\+]/g,'');"
+                    maxlength="13"
+                >
+                 <p class="error-phone">Start from +380</p>
+            </span>
+        </label>
     </div>
 
-    <div class="row">
-        <div class="col-4"><label for="userEmail" class="control-label">Email Address
-        </label></div>
-        <div class="col-12 col-md-5  input-row">
-            <div class="input-group-text-2">
-                <svg class="icon-message">
-                    <use xlink:href="#message"></use>
-                </svg>
-            </div>
-            <input type="text" class="form-control-email" id="userEmail" placeholder="Email Address">
-        </div>
-        <p class="error-email">Only @ukr.net</p>
+    <div class="form-group">
+        <label class="label-wrap col-12">
+            <span class="col-md-3">Email Address</span>
+            <span class="col-md-4 col-12">
+                <svg><use xlink:href="#message"></use></svg>
+                <input
+                    class="form-control-email"
+                    type="text"
+                    id="userEmail"
+                    placeholder="Email Address"
+                >
+                 <p class="error-email">Only @ukr.net</p>
+            </span>
+        </label>
     </div>
 
-    <div class="row">
-        <div class="col-4"><label for="userTime" class="control-label">Availability time
-        </label></div>
-        <div class="col-12 col-md-5  input-row">
-            <div class="input-group-text-2">
-                <svg class="icon-time">
-                    <use xlink:href="#time"></use>
-                </svg>
-            </div>
-            <input type="text" class="form-control-time" id="userTime" placeholder="Availability time"
-                   oninput="this.value=this.value.replace(/[^0-9\:]/g,'');">
-        </div>
+    <div class="form-group">
+        <label class="label-wrap col-12">
+            <span class="col-md-3">Availability time</span>
+            <span class="col-md-4 col-12">
+                <svg><use xlink:href="#time"></use></svg>
+                <input
+                    class="form-control-time"
+                    type="text"
+                    id="userTime"
+                    placeholder="Availability time"
+                    oninput="this.value=this.value.replace(/[^0-9\:]/g,'');"
+                >
+            </span>
+        </label>
     </div>
 
-    <div class="row">
-        <div class="col-4"><label for="userLanguage" class="control-label">Languages Known
-        </label></div>
-        <div class="col-12 col-md-5  input-row">
-            <div class="input-group-text-2">
-                <svg class="icon-paper">
-                    <use xlink:href="#paper"></use>
-                </svg>
-            </div>
-            <input type="text" class="form-control-language" id="userLanguage" placeholder="Language">
-        </div>
+    <div class="form-group">
+        <label class="label-wrap col-12">
+            <span class="col-md-3">Languages Known</span>
+            <span class="col-md-4 col-12">
+                <svg><use xlink:href="#paper"></use></svg>
+                <input
+                    class="form-control-language"
+                    type="text"
+                    id="userLanguage"
+                    placeholder="Language"
+                >
+            </span>
+        </label>
     </div>
 
-    <div class="row">
-        <div class="col-4"><label for="userComment" class="control-label">Overview (max 200 words)
-        </label></div>
-        <div class="col-12 col-md-5">
-            <div class="form-group">
-                <textarea class="form-control-comment" rows="5" id="userComment" placeholder="Enter comments"></textarea>
-            </div>
-        </div>
+    <div class="form-group">
+        <label class="label-wrap col-12">
+        <span class="col-md-3">Overview (max 200 words)</span>
+        <span class="col-md-4 col-12">
+        <textarea
+                class="form-control-name"
+                style="height: 112px;"
+                rows="5"
+                maxlength="200"
+                id="userComment"
+        >
+        </textarea>
+        </span>
+        </label>
     </div>
 
-    <div class="row">
-        <div class="col-4"></div>
-        <div class="col-10 col-md-5 justify-content-start">
-            <button type="submit" class="btn btn-primary">Submit</button>
-            <button type="button" class="btn btn-danger">Reset</button>
-        </div>
+
+    <div class="form-group">
+        <label class="label-wrap col-12">
+            <button type="submit" class="btn btn-primary"><a href="#">Submit</a></button>
+            <button type="button" class="btn btn-danger"><a href="#">Reset</a></button>
+        </label>
     </div>
 
 </div>
@@ -163,9 +211,6 @@
         <p><span class="close">ОК</span></p>
     </div>
 </div>
-
-
-
 
 
 <script type="text/javascript" src="//code.jquery.com/jquery-1.11.0.min.js"></script>
@@ -187,61 +232,37 @@
             } else {
                 $('.form-control-name').removeClass("name-empty")
             }
-        })
-</script>
-<script>
-    $('.btn-primary').on(
-        'click',function ($event) {
+
             if ($('#userBirth').val() === '') {
                 $('.form-control-birth').addClass("birth-empty")
             } else {
                 $('.form-control-birth').removeClass("birth-empty")
             }
-        })
-</script>
-<script>
-    $('.btn-primary').on(
-        'click',function ($event) {
+
             if ($('#userPhone').val() === '') {
                 $('.form-control-phone').addClass("phone-empty")
             } else {
                 $('.form-control-phone').removeClass("phone-empty")
             }
-        })
-</script>
-<script>
-    $('.btn-primary').on(
-        'click',function ($event) {
+
             if ($('#userEmail').val() === '') {
                 $('.form-control-email').addClass("email-empty")
             } else {
                 $('.form-control-email').removeClass("email-empty")
             }
-        })
-</script>
-<script>
-    $('.btn-primary').on(
-        'click',function ($event) {
+
             if ($('#userTime').val() === '') {
                 $('.form-control-time').addClass("time-empty")
             } else {
                 $('.form-control-time').removeClass("time-empty")
             }
-        })
-</script>
-<script>  $('.btn-primary').on(
-    'click',function ($event) {
-        if ($('#userLanguage').val() === '') {
-            $('.form-control-language').addClass("language-empty")
-        } else {
-            $('.form-control-language').removeClass("language-empty")
-        }
-    })
 
-</script>
-<script>
-    $('.btn-primary').on(
-        'click',function ($event) {
+            if ($('#userLanguage').val() === '') {
+                $('.form-control-language').addClass("language-empty")
+            } else {
+                $('.form-control-language').removeClass("language-empty")
+            }
+
             if ($('#userComment').val() === '') {
                 $('.form-control-comment').addClass("comment-empty")
             } else {
@@ -249,6 +270,9 @@
             }
         })
 </script>
+
+
+
 
 
 <script>
@@ -301,7 +325,6 @@
         })
 </script>
 
-
 <script>
     $('#userBirth').on(
         'click',function ($event){
@@ -326,17 +349,61 @@
 
 <script>
     $('.btn-danger').on(
-        'click',function ($event) {
+        'click',function ($event){
             document.getElementById("userName").value = "";
             document.getElementById("userBirth").value = "";
             document.getElementById("userPhone").value = "";
             document.getElementById("userEmail").value = "";
             document.getElementById("userTime").value = "";
             document.getElementById("userComment").value = "";
+
+            if (document.getElementById('userName').value){
+                $('.form-control-name').addClass("name-empty")
+            } else{
+                $('.form-control-name').removeClass("name-empty")
+            }
+
+            if (document.getElementById('userBirth').value){
+                $('.form-control-birth').addClass("birth-empty")
+            } else{
+                $('.form-control-birth').removeClass("birth-empty")
+            }
+
+            if (document.getElementById('userPhone').value){
+                $('.form-control-phone').addClass("phone-empty")
+            } else{
+                $('.form-control-phone').removeClass("phone-empty")
+            }
+
+            if (document.getElementById('userEmail').value){
+                $('.form-control-email').addClass("email-empty")
+            } else{
+                $('.form-control-email').removeClass("email-empty")
+            }
+
+            if (document.getElementById('userTime').value){
+                $('.form-control-time').addClass("time-empty")
+            } else{
+                $('.form-control-time').removeClass("time-empty")
+            }
+
+            if (document.getElementById('userComment').value){
+                $('.form-control-comment').addClass("comment-empty")
+            } else{
+                $('.form-control-comment').removeClass("comment-empty")
+            }
         })
 </script>
 
-
+<script>
+    $(document).ready(function () {
+        $(".btn-danger").click(function () {
+            $(".is-error-name").css("display","none");
+            $(".is-error-phone").css("display","none");
+            $(".is-error-email").css("display","none");
+        });
+    });
+</script>
 
 <script>
     $('#userName').on(
@@ -346,7 +413,6 @@
             } else{
                 $('.error-name').addClass("is-error-name")
             }
-
         })
 </script>
 <script>
@@ -370,7 +436,6 @@
             } else{
                 $('.error-phone').addClass("is-error-phone")
             }
-
         })
 </script>
 
@@ -386,6 +451,7 @@
 
 <script>
     $(".form-control-time").clockpicker({
+        autoclose: true,
         afterDone: function() {
         }
     });
@@ -475,6 +541,7 @@
             document.getElementById("blah").target.result.value = "";
         })
 </script>
+
 
 
 
