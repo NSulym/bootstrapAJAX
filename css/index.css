@@ -52,7 +52,10 @@ body{
     display: none;
 }
 #blah{
-    padding-left: 10px;
+    width: 50px;
+    height: 50px;
+    margin-left: 10px;
+    object-fit: cover;
 }
 .form-check-label{
     margin-left: 35px;
@@ -60,7 +63,7 @@ body{
 .tag-editor{
     width: 100%;
 }
-.btn-wrap{
+.btn-wrap {
     display: flex;
     justify-content: center;
 }

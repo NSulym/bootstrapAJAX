@@ -184,7 +184,7 @@
         <span class="col-md-4 col-12">
         <textarea
                 class="form-control-name"
-                style="height: 112px;"
+                style="height: 112px;resize: none"
                 rows="5"
                 maxlength="200"
                 id="userComment"
@@ -356,6 +356,7 @@
             document.getElementById("userEmail").value = "";
             document.getElementById("userTime").value = "";
             document.getElementById("userComment").value = "";
+            $('#blah').attr('src',"https://via.placeholder.com/50/e9ecef/0000FF/?text=");
 
             if (document.getElementById('userName').value){
                 $('.form-control-name').addClass("name-empty")
@@ -539,6 +540,7 @@
             document.getElementById("userTime").value = "";
             document.getElementById("userComment").value = "";
             document.getElementById("blah").target.result.value = "";
+            $('#blah').attr('src',"https://via.placeholder.com/50/e9ecef/0000FF/?text=");
         })
 </script>
 
